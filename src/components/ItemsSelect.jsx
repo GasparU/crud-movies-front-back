@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, Form, ListGroup } from 'react-bootstrap';
 
-const ItemsSelect = ({ items, itemsSelected, setItemsSelected, isMultiple=true, itemStructure }) => {
+const ItemsSelect = ({ items, itemsSelected, setItemsSelected, isMultiple = true, itemStructure }) => {
 
     const selectMultiple = (id) => {
         // si ya esta seleccionado, no hagas nada
-        if(itemsSelected.includes(id)) return
+        if (itemsSelected.includes(id)) return
         setItemsSelected([...itemsSelected, id]);
     }
 
@@ -24,10 +24,10 @@ const ItemsSelect = ({ items, itemsSelected, setItemsSelected, isMultiple=true, 
     const deselectItem = isMultiple ? deselectMultiple : deselectOne;
 
     const structure = item => {
-        if(!item) return <></>
-        if(itemStructure) return itemStructure(item);
+        if (!item) return <></>
+        if (itemStructure) return itemStructure(item);
         return <>
-            <Card.Img src={item.image} style={{objectFit: "cover"}} />
+            <Card.Img src={item.image} style={{ objectFit: "cover" }} />
             <Card.Body>{item.firstName} {item.lastName}</Card.Body>
         </>
     }
@@ -42,7 +42,7 @@ const ItemsSelect = ({ items, itemsSelected, setItemsSelected, isMultiple=true, 
                 ))}
             </Form.Select>
 
-            <ListGroup horizontal className='mb-3' style={{width: "fit-content"}}>
+            <ListGroup horizontal className='mb-3' style={{ width: "fit-content" }}>
                 {
                     isMultiple ? (
                         itemsSelected.map(itemId => {
@@ -54,7 +54,7 @@ const ItemsSelect = ({ items, itemsSelected, setItemsSelected, isMultiple=true, 
                                     </button>
                                     <Card
                                         className="form-card"
-                                        key={item.id} 
+                                        key={item.id}
                                     >
                                         {structure(item)}
                                     </Card>

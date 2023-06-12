@@ -5,7 +5,7 @@ import ButtonsEditDelete from '../ButtonsEditDelete';
 import { deleteDirectorThunk } from '../../store/slices/directors.slice'
 import formatDate from '../../utils/formatDate';
 
-const DirectorCard = ({ director, selectDirector, showOptions=true }) => {
+const DirectorCard = ({ director, selectDirector, showOptions = true }) => {
 
     const { id, image, firstName, lastName, nationality } = director;
 
@@ -14,9 +14,9 @@ const DirectorCard = ({ director, selectDirector, showOptions=true }) => {
     const dispatch = useDispatch();
 
     return (
-        <Col>
-            <Card style={{height: "100%"}}>
-                <Card.Img variant="top" src={image} style={{ height: 300, objectFit: "cover" }} />
+        <Col >
+            <Card style={{ height: "100%" }} className='card-body-edit'>
+                <Card.Img variant="top" src={image} style={{ height: 300, objectFit: "cover" }} className='card-image-edit' />
                 <Card.Body className="d-flex flex-column">
                     <Card.Title>{firstName} {lastName}</Card.Title>
                     <div className="flex-fill">
@@ -24,7 +24,7 @@ const DirectorCard = ({ director, selectDirector, showOptions=true }) => {
                         <div><b>Nationality: </b>{nationality}</div>
                     </div>
                     {showOptions && (
-                        <ButtonsEditDelete 
+                        <ButtonsEditDelete
                             onDelete={() => dispatch(deleteDirectorThunk(id))}
                             onUpdate={() => selectDirector(director)}
                         />

@@ -8,17 +8,18 @@ const MovieCard = ({ movie, selectMovie }) => {
 
     const isLong = movie.synopsis.length > 120;
 
-    const synopsis = !isLong ? movie.synopsis : movie.synopsis.slice(0, 120)+"..."
+    const synopsis = !isLong ? movie.synopsis : movie.synopsis.slice(0, 120) + "..."
 
     const navigate = useNavigate();
 
     return (
-        <Col>
-            <Card 
-                style={{height: "100%", cursor: "pointer"}}
+        <Col style={{ perspective: 2000 }}>
+            <Card
+                style={{ height: "100%", cursor: "pointer" }}
+                className='card-body-edit'
                 onClick={() => navigate(`/movies/${movie.id}`)}
             >
-                <Card.Img variant="top" src={image} style={{height: 300, objectFit: "cover"}} />
+                <Card.Img className='card-image-edit' variant="top" src={image} style={{ height: 300, objectFit: "cover" }} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>

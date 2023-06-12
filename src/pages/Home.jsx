@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import MovieCard from '../components/Movies/MovieCard';
 
+
 const Home = () => {
 
     const { movies, genres } = useSelector(state => state);
@@ -21,7 +22,7 @@ const Home = () => {
 
     return (
         <Row>
-            <Col md={3} xl={2}>
+            <Col md={3} xl={2} >
                 <h3>Filter by genre</h3>
                 {genres.map(genre => (
                     <li

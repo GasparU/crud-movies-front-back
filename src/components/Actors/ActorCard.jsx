@@ -5,7 +5,7 @@ import ButtonsEditDelete from '../ButtonsEditDelete';
 import { deleteActorThunk } from '../../store/slices/actors.slice';
 import formatDate from '../../utils/formatDate';
 
-const ActorCard = ({ actor, selectActor, showOptions=true }) => {
+const ActorCard = ({ actor, selectActor, showOptions = true }) => {
 
     const { id, image, firstName, lastName, nationality } = actor;
 
@@ -15,8 +15,8 @@ const ActorCard = ({ actor, selectActor, showOptions=true }) => {
 
     return (
         <Col>
-            <Card style={{height: "100%"}}>
-                <Card.Img variant="top" src={image} style={{ height: 300, objectFit: "cover" }} />
+            <Card style={{ height: "100%" }} className='card-body-edit'>
+                <Card.Img variant="top" src={image} style={{ height: 300, objectFit: "cover" }} className='card-image-edit' />
                 <Card.Body className="d-flex flex-column">
                     <Card.Title>{firstName} {lastName}</Card.Title>
                     <div className="flex-fill">
@@ -25,7 +25,7 @@ const ActorCard = ({ actor, selectActor, showOptions=true }) => {
                     </div>
                     {
                         showOptions && (
-                            <ButtonsEditDelete 
+                            <ButtonsEditDelete
                                 onDelete={() => dispatch(deleteActorThunk(id))}
                                 onUpdate={() => selectActor(actor)}
                             />

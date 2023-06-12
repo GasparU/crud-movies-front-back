@@ -4,9 +4,9 @@ import { deleteGenreThunk, updateGenreThunk } from '../../store/slices/genres.sl
 
 const GenreItem = ({ genre }) => {
 
-    const [ isUpdating, setIsUpdating ] = useState(false);
-    const [ genreUpdated, setGenreUpdated ] = useState(genre.name);
-    
+    const [isUpdating, setIsUpdating] = useState(false);
+    const [genreUpdated, setGenreUpdated] = useState(genre.name);
+
     const dispatch = useDispatch();
 
     const update = () => {
@@ -15,15 +15,15 @@ const GenreItem = ({ genre }) => {
     }
 
     return (
-        <li key={genre.id} className="genres-item bg-light">
+        <li key={genre.id} className="genres-item bg-light ">
             {isUpdating ? (
-                <input 
-                    value={genreUpdated} 
-                    onChange={e => setGenreUpdated(e.target.value)} 
+                <input
+                    value={genreUpdated}
+                    onChange={e => setGenreUpdated(e.target.value)}
                 />
             ) : (
-                <div 
-                    className="genre-name" 
+                <div
+                    className="genre-name"
                     onClick={() => setIsUpdating(true)}
                 >{genreUpdated}</div>
             )}
@@ -33,8 +33,8 @@ const GenreItem = ({ genre }) => {
                     <i className="fa-solid fa-pen-to-square"></i>
                 </button>
             )}
-            <button 
-                className="bg-danger" 
+            <button
+                className="bg-danger"
                 onClick={() => dispatch(deleteGenreThunk(genre.id))}
             >
                 <i className="fa-solid fa-trash-can"></i>

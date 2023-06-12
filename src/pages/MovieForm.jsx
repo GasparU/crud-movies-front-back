@@ -9,6 +9,7 @@ import GenresModal from '../components/Genres/GenresModal';
 import ItemsSelect from '../components/ItemsSelect';
 import { addMovieThunk, updateMovieThunk } from '../store/slices/movies.slice';
 import searchAndFormatMovie from '../utils/searchAndFormatMovie';
+import Swal from 'sweetalert2'
 
 const defaultMovie = {
     name: "", image: "", synopsis: "", releaseDate: "", genres: [], directors: [], actors: []
@@ -26,7 +27,7 @@ const MovieForm = () => {
 
     const [movie, setMovie] = useState(defaultMovie);
     const editMovie = (field, value) => setMovie({ ...movie, [field]: value });
-    
+
     const [showForm, setShowForm] = useState({ genres: false, actors: false, directors: false });
     const openForm = form => setShowForm({ ...showForm, [form]: true });
     const closeForm = form => setShowForm({ ...showForm, [form]: false });
@@ -40,6 +41,14 @@ const MovieForm = () => {
         if (!id) {
             dispatch(addMovieThunk(movie));
             navigate("/");
+            // Intro sweet alert for Jose Gaspar
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Película Creada Correctamente',
+                showConfirmButton: false,
+                timer: 2500
+            })
         } else {
             dispatch(updateMovieThunk(+id, movie));
             navigate(`/movies/${id}`);
@@ -83,7 +92,7 @@ const MovieForm = () => {
                     />
 
 
-                    <FloatingLabel label="Release year" className="mb-4" style={{maxWidth: 200}}>
+                    <FloatingLabel label="Release year" className="mb-4" style={{ maxWidth: 200 }}>
                         <Form.Control
                             placeholder='Release year'
                             value={movie.releaseYear}

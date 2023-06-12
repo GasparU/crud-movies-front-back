@@ -32,7 +32,9 @@ export const addMovieThunk = movie => dispatch => {
         const { data: directors } = await axios.post(`/movies/${data.id}/directors`, movie.directors);
         const { data: actors } = await axios.post(`/movies/${data.id}/actors`, movie.actors);
         dispatch(addMovie({...data, genres, directors, actors}));
-    }, "Movie added successfully"))
+    }, 
+    // "Movie added successfully"
+    ))
 }
 
 export const deleteMovieThunk = id => dispatch => {

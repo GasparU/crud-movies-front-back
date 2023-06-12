@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import GenresModal from './Genres/GenresModal';
 
 const NavBar = () => {
+    const [theme, setTheme] = useState()
+    const darkMode = () => {
+        setTheme(!theme)
+    }
 
     const [showGenres, setShowGenres] = useState(false);
 
     return (
         <>
-            <Navbar bg="primary" variant="dark" expand="md">
-                <Container>
+            <Navbar variant="dark" expand="md" className='navbar-edit '>
+                <Container className='container-edit'>
                     <Navbar.Brand as={Link} to="/">Movies App</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -23,9 +27,9 @@ const NavBar = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <GenresModal 
-                show={showGenres} 
-                handleClose={() => setShowGenres(false)} 
+            <GenresModal
+                show={showGenres}
+                handleClose={() => setShowGenres(false)}
             />
         </>
     );

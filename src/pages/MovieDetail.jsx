@@ -30,7 +30,7 @@ const MovieDetail = () => {
         <>
             <Row>
                 <Col sm={3} md={4} xl={3}>
-                    <img src={movie.image} alt="" className="img-fluid" />
+                    <img src={movie.image} alt="" className="img-fluid card-image-edit-2" />
                 </Col>
                 <Col>
                     <h1>{movie.name}</h1>
@@ -58,8 +58,8 @@ const MovieDetail = () => {
                 </Col>
             </Row>
             <div className="options-movie-buttons">
-                <ButtonsEditDelete 
-                    size="lg" 
+                <ButtonsEditDelete
+                    size="lg"
                     rounded
                     onDelete={deleteMovie}
                     onUpdate={() => navigate(`/movies/update/${movie.id}`)}

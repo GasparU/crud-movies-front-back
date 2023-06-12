@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -10,16 +10,16 @@
     z-index: 99999;
 }
 
-.items-select{
+.items-select {
     overflow-x: auto;
 }
 
-.items-select .form-card-container{
+.items-select .form-card-container {
     position: relative;
     margin-right: 20px;
 }
 
-.items-select .form-card-container .delete-button{
+.items-select .form-card-container .delete-button {
     background: #ff0000;
     width: 40px;
     height: 40px;
@@ -31,23 +31,23 @@
     z-index: 9;
 }
 
-.items-select .form-card{
+.items-select .form-card {
     width: 200px;
 }
 
-.items-select .form-card img{
+.items-select .form-card img {
     height: 300px;
     object-fit: contain;
 }
 
-.genres-list{
+.genres-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
 }
 
-.genres-list .genres-item{
+.genres-list .genres-item {
     display: flex;
     border-radius: 10px;
     margin: 5px;
@@ -56,23 +56,23 @@
     width: fit-content;
 }
 
-.genres-list .genres-item .genre-name{
+.genres-list .genres-item .genre-name {
     padding: 4px 15px;
     cursor: pointer;
 }
 
-.genres-list .genres-item input{
+.genres-list .genres-item input {
     width: 100px;
     outline: none;
     border: none;
     padding: 4px 15px;
 }
 
-.genres-list .genres-item button{
+.genres-list .genres-item button {
     border: none;
 }
 
-.empty-image{
+.empty-image {
     width: 100%;
     aspect-ratio: 3/4;
     display: flex;
@@ -84,7 +84,7 @@
     border-radius: 4px;
 }
 
-.empty-image img{
+.empty-image img {
     position: absolute;
     top: 0;
     left: 0;
@@ -95,7 +95,7 @@
     object-fit: cover;
 }
 
-.movie-name-input{
+.movie-name-input {
     border: none;
     font-size: 35px;
     outline: none;
@@ -103,17 +103,51 @@
     font-weight: 500;
 }
 
-.options-movie-buttons{
+.options-movie-buttons {
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
 
-.filter-option{ cursor: pointer; }
-.filter-option:hover{ text-decoration: underline; }
+.filter-option {
+    cursor: pointer;
+    list-style: none;
+}
 
-.educational-purposes{
+.filter-option:hover {
+    text-decoration: underline;
+}
+
+.educational-purposes {
     width: 100%;
     padding: 10px;
     text-align: center;
+}
+
+.card-body-edit {
+    border-radius: 15px;
+    transition: transform .4s ease;
+
+}
+
+.card-body-edit:hover {
+    transform: scale(1.02);
+    filter: saturate(1.3);
+}
+
+.card-image-edit {
+    border-radius: 15px 15px 0 0;
+}
+
+.navbar-edit {
+    background: rgb(55, 130, 234);
+
+}
+
+.container-edit {
+    z-index: 9;
+}
+
+.card-image-edit-2 {
+    border-radius: 15px;
 }

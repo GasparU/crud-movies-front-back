@@ -26,11 +26,11 @@ function App() {
   return (
     <HashRouter>
       <div className="educational-purposes" >
-            Front-end made by Academlo instructors for educational purposes
-        </div>
+        Front-end y servidor creado por José Gaspar.
+      </div>
       <NavBar />
       <Notification />
-      { isLoading && <LoadingScreen /> }
+      {isLoading && <LoadingScreen />}
       <Container className='my-5'>
         <Routes>
           <Route path="/" element={<Home />} />
